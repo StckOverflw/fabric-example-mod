@@ -1,15 +1,14 @@
 plugins {
-	id("fabric-loom") version "0.9-SNAPSHOT"
+	id("fabric-loom") version "0.10-SNAPSHOT"
 	`maven-publish`
 }
 
-val sourceCompatibility = JavaVersion.VERSION_16
-val targetCompatibility = JavaVersion.VERSION_16
+val sourceCompatibility = JavaVersion.VERSION_17
+val targetCompatibility = JavaVersion.VERSION_17
 
 val archives_base_name: String by project
 val mod_version: String by project
 val maven_group: String by project
-
 
 repositories {
 	// Add repositories to retrieve artifacts from in here.
@@ -49,7 +48,7 @@ tasks {
 		// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
 		// JDK 9 introduced a new way of specifying this that will make sure no newer classes or methods are used.
 		// We'll use that if it's available, but otherwise we'll use the older option.
-		val targetVersion = 16
+		val targetVersion = 17
 		if (JavaVersion.current().isJava9Compatible) {
 			options.release.convention(targetVersion)
 		}
