@@ -1,3 +1,5 @@
+rootProject.name = "fabric-example-mod"
+
 pluginManagement {
     repositories {
         maven {
