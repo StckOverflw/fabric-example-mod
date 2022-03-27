@@ -55,12 +55,6 @@ tasks {
 		}
 	}
 
-	jar {
-		from("LICENSE") {
-			rename { "${it}_${archives_base_name}" }
-		}
-	}
-
 	val sourcesJar by creating(Jar::class) {
 		dependsOn(classes)
 		archiveClassifier.convention("sources")
